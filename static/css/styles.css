@@ -251,7 +251,8 @@ button:hover{
 
 .contacts{
     margin: 3%;
-    background-color: var(--secondary);
+    /* background-color: var(--secondary); */
+    background-color: lightgoldenrodyellow;
     border-radius: 20px 0;
 }
 
