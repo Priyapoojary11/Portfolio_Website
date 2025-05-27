@@ -272,3 +272,34 @@ button:hover{
     font-size: 20px;
     color: var(--cyan);
 }
+
+
+.project {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    }
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show only 2 lines */
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease;
+    }
+
+.description.expanded {
+    -webkit-line-clamp: unset;
+    }
+
+.read-more-btn {
+    color: blue;
+    cursor: pointer;
+    margin-top: 5px;
+    display: inline-block;
+    }
+
+.title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    }
