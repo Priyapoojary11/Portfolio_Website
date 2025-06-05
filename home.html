@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Excel Data</title>
+</head>
+<body>
+    <h1>Test Cases from Excel File</h1>
+    <div id="excel-table">Loading...</div>
+
+    <!-- Include the SheetJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+    <script>
+        // The URL of the Excel file hosted on the server
+        const excelFileUrl = 'test.xlsx'; // <-- Replace with your actual file URL
+
+        // Simple fetch to check if the file can be loaded
+        fetch(excelFileUrl)
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('Failed to load the Excel file. Status: ' + response.status);
+                }
+                return response.arrayBuffer();  // Read the file as a binary array
+            })
+            .then(data => {
+                console.log('Excel file fetched successfully');
+                document.getElementById('excel-table').innerHTML = 'Excel file loaded successfully!';
+            })
+            .catch(error => {
+                console.error('Error fetching the Excel file:', error);
+                document.getElementById('excel-table').innerHTML = 'Failed to load the Excel file. Check the console for errors.';
+            });
+    </script>
+</body>
+</html>
